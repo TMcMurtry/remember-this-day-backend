@@ -1,4 +1,8 @@
 package repositories;
 
-public class UsersRepository {
+import models.Users;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsersRepository extends JpaRepository<Users, Integer> {
 }
+

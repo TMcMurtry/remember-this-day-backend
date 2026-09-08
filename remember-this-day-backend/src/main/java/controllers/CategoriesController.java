@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Categories;
-import repositories.CategoriesRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
