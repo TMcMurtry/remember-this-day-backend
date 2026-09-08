@@ -1,9 +1,12 @@
 package controllers;
 
 import models.Categories;
+import repositories.CategoriesRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/categories")
@@ -20,7 +23,7 @@ public class CategoriesController {
     }
 
     @GetMapping("/{id}")
-    public Categories getItem(PathVariable int id) {
+    public Categories getItem(@PathVariable int id) {
         return categoriesRepository.findById(id).orElse(null);
     }
 
