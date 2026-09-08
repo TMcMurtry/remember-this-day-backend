@@ -21,7 +21,7 @@ public class PromptsController {
     }
 
     @GetMapping("/{id}")
-    public Prompts getItem(PathVariable int id) {
+    public Prompts getItem(@PathVariable int id) {
         return promptsRepository.findById(id).orElse(null);
     }
 

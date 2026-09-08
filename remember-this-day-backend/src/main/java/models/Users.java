@@ -17,5 +17,6 @@ public class Users {
     private String fullName;
 
 
-
+    public void setId(int id) {
+    }
 }

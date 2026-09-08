@@ -11,5 +11,9 @@ public class Prompts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String promptText
+
+    public void setId(int id) {
+    }
+
     private
 }

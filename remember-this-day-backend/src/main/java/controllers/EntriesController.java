@@ -19,7 +19,7 @@ public class EntriesController {
     public List<Entries> getAllItems() { return entriesRepository.findAll();   }
 
     @GetMapping("/{id}")
-    public Entries getItem(PathVariable int id) {
+    public Entries getItem(@PathVariable int id) {
         return entriesRepository.findById(id).orElse(null);
     }
 
