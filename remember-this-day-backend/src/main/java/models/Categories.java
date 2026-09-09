@@ -1,6 +1,7 @@
 package models;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "categories")
@@ -8,8 +9,11 @@ public class Categories {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String categoryName;
     private boolean previouslyDisplayed;
+    private String categoryName;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categories", orphanRemoval = true)
+    private List<Prompts> prompts;
 
 
     public Categories() {

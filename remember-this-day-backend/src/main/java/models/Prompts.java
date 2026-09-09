@@ -9,8 +9,10 @@ public class Prompts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String promptText;
-    private String categoryId;
     private boolean previouslyDisplayed;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Categories categories;
 
     public int getId() {
         return id;
@@ -28,12 +30,12 @@ public class Prompts {
         this.promptText = promptText;
     }
 
-    public String getCategoryId() {
-        return categoryId;
+    public Categories getCategories() {
+        return categories;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
+    public void setCategories(Categories categories) {
+        this.categories = categories;
     }
 
     public boolean getPreviouslyDisplayed() {

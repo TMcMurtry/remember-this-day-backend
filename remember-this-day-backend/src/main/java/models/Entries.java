@@ -8,12 +8,14 @@ public class Entries {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int userId;
     private String title;
     private String entry;
     private String date;
     private String dateCreated;
     private String previouslyDisplayed;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private int userId;
 
     public Entries() {
     }
