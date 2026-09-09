@@ -10,11 +10,39 @@ public class Prompts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String promptText
+    private String promptText;
+    private String categoryId;
+    private boolean previouslyDisplayed;
 
-    public void setId(int id) {
-        
+    public int getId() {
+        return id;
     }
 
-    private
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPromptText() {
+        return promptText;
+    }
+
+    public void setPromptText(String promptText) {
+        this.promptText = promptText;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public boolean getPreviouslyDisplayed() {
+        return previouslyDisplayed;
+    }
+
+    public void setPreviouslyDisplayed(boolean previouslyDisplayed) {
+        this.previouslyDisplayed = previouslyDisplayed;
+    }
 }
