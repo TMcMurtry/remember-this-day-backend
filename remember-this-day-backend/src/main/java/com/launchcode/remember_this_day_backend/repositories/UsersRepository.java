@@ -1,6 +1,6 @@
-package repositories;
+package com.launchcode.remember_this_day_backend.repositories;
 
-import models.Users;
+import com.launchcode.remember_this_day_backend.models.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UsersRepository extends JpaRepository<Users, Integer> {

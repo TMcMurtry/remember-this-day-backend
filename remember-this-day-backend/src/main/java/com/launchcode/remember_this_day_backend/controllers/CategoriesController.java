@@ -1,12 +1,10 @@
-package controllers;
+package com.launchcode.remember_this_day_backend.controllers;
 
-import models.Categories;
-import repositories.CategoriesRepository;
+import com.launchcode.remember_this_day_backend.models.Categories;
+import com.launchcode.remember_this_day_backend.repositories.CategoriesRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
 
 @RestController
 @RequestMapping("/categories")

@@ -1,7 +1,7 @@
-package controllers;
+package com.launchcode.remember_this_day_backend.controllers;
 
-import models.Users;
-import repositories.UsersRepository;
+import com.launchcode.remember_this_day_backend.models.Users;
+import com.launchcode.remember_this_day_backend.repositories.UsersRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

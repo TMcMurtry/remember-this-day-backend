@@ -1,7 +1,7 @@
-package controllers;
+package com.launchcode.remember_this_day_backend.controllers;
 
-import models.Prompts;
-import repositories.PromptsRepository;
+import com.launchcode.remember_this_day_backend.models.Prompts;
+import com.launchcode.remember_this_day_backend.repositories.PromptsRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

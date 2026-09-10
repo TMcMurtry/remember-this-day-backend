@@ -1,4 +1,4 @@
-package models;
+package com.launchcode.remember_this_day_backend.models;
 
 import jakarta.persistence.*;
 
