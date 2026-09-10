@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name= "entries")
-public class Entries {
+public class Entry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    private String entry;
+    private String entryText;
     private String date;
     private String dateCreated;
     private String previouslyDisplayed;
@@ -18,13 +18,13 @@ public class Entries {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private Users users;
 
-    public Entries() {
+    public Entry() {
     }
 
-    public Entries( Users users, String title, String entry, String date, String dateCreated, String previouslyDisplayed) {
+    public Entry(Users users, String title, String entryText, String date, String dateCreated, String previouslyDisplayed) {
         this.users = users;
         this.title = title;
-        this.entry = entry;
+        this.entryText = entryText;
         this.date = date;
         this.dateCreated = dateCreated;
         this.previouslyDisplayed = previouslyDisplayed;
@@ -54,12 +54,12 @@ public class Entries {
         this.title = title;
     }
 
-    public String getEntry() {
-        return entry;
+    public String getEntryText() {
+        return entryText;
     }
 
-    public void setEntry(String entry) {
-        this.entry = entry;
+    public void setEntryText(String entryText) {
+        this.entryText = entryText;
     }
 
     public String getDate() {
