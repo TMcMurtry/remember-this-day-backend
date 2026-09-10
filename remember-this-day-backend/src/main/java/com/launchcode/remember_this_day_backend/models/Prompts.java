@@ -13,13 +13,13 @@ public class Prompts {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private Categories categories;
+    private Category category;
 
     public Prompts() {
     }
 
-    public Prompts(Categories categories, String promptText, boolean previouslyDisplayed) {
-        this.categories = categories;
+    public Prompts(Category category, String promptText, boolean previouslyDisplayed) {
+        this.category = category;
         this.promptText = promptText;
         this.previouslyDisplayed = previouslyDisplayed;
     }
@@ -40,12 +40,12 @@ public class Prompts {
         this.promptText = promptText;
     }
 
-    public Categories getCategories() {
-        return categories;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategories(Categories categories) {
-        this.categories = categories;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public boolean getPreviouslyDisplayed() {

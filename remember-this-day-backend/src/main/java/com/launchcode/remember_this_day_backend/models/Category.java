@@ -5,21 +5,21 @@ import java.util.List;
 
 @Entity
 @Table(name = "categories")
-public class Categories {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private boolean previouslyDisplayed;
     private String categoryName;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categories", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category", orphanRemoval = true)
     private List<Prompts> prompts;
 
 
-    public Categories() {
+    public Category() {
     }
 
-    public Categories(String categoryName, boolean previouslyDisplayed) {
+    public Category(String categoryName, boolean previouslyDisplayed) {
         this.categoryName = categoryName;
         this.previouslyDisplayed = previouslyDisplayed;
     }
