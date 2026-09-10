@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -14,13 +14,13 @@ public class Users {
     private String password;
     private String fullName;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "users", orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
     private java.util.List<Entry> entries;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String email, String username, String memberSince, String password, String fullName) {
+    public User(String email, String username, String memberSince, String password, String fullName) {
         this.email = email;
         this.username = username;
         this.memberSince = memberSince;

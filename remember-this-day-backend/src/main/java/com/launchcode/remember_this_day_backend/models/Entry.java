@@ -16,13 +16,13 @@ public class Entry {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private Users users;
+    private User user;
 
     public Entry() {
     }
 
-    public Entry(Users users, String title, String entryText, String date, String dateCreated, String previouslyDisplayed) {
-        this.users = users;
+    public Entry(User user, String title, String entryText, String date, String dateCreated, String previouslyDisplayed) {
+        this.user = user;
         this.title = title;
         this.entryText = entryText;
         this.date = date;
@@ -38,12 +38,12 @@ public class Entry {
         this.id = id;
     }
 
-    public Users getUsers() {
-        return users;
+    public User getUsers() {
+        return user;
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
+    public void setUsers(User user) {
+        this.user = user;
     }
 
     public String getTitle() {

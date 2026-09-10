@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "prompts")
-public class Prompts {
+public class Prompt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -15,10 +15,10 @@ public class Prompts {
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
-    public Prompts() {
+    public Prompt() {
     }
 
-    public Prompts(Category category, String promptText, boolean previouslyDisplayed) {
+    public Prompt(Category category, String promptText, boolean previouslyDisplayed) {
         this.category = category;
         this.promptText = promptText;
         this.previouslyDisplayed = previouslyDisplayed;

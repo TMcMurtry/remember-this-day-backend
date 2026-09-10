@@ -13,7 +13,7 @@ public class Category {
     private String categoryName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category", orphanRemoval = true)
-    private List<Prompts> prompts;
+    private List<Prompt> prompts;
 
 
     public Category() {
