@@ -1,0 +1,7 @@
+package com.launchcode.remember_this_day_backend.repositories;
+
+import com.launchcode.remember_this_day_backend.models.Prompt;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PromptRepository extends JpaRepository<Prompt, Integer> {
+}
