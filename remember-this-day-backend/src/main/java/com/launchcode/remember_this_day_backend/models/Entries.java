@@ -15,13 +15,14 @@ public class Entries {
     private String previouslyDisplayed;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private int userId;
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private Users users;
 
     public Entries() {
     }
 
-    public Entries( int userId, String title, String entry, String date, String dateCreated, String previouslyDisplayed) {
-        this.userId = userId;
+    public Entries( Users users, String title, String entry, String date, String dateCreated, String previouslyDisplayed) {
+        this.users = users;
         this.title = title;
         this.entry = entry;
         this.date = date;
@@ -37,12 +38,12 @@ public class Entries {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
     public String getTitle() {

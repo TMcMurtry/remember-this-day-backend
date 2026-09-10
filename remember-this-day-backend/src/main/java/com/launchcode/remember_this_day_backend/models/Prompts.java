@@ -12,7 +12,17 @@ public class Prompts {
     private boolean previouslyDisplayed;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Categories categories;
+
+    public Prompts() {
+    }
+
+    public Prompts(Categories categories, String promptText, boolean previouslyDisplayed) {
+        this.categories = categories;
+        this.promptText = promptText;
+        this.previouslyDisplayed = previouslyDisplayed;
+    }
 
     public int getId() {
         return id;
