@@ -9,7 +9,7 @@ public class Prompt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String promptText;
-    private boolean previouslyDisplayed;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
@@ -18,10 +18,9 @@ public class Prompt {
     public Prompt() {
     }
 
-    public Prompt(Category category, String promptText, boolean previouslyDisplayed) {
+    public Prompt(Category category, String promptText) {
         this.category = category;
         this.promptText = promptText;
-        this.previouslyDisplayed = previouslyDisplayed;
     }
 
     public int getId() {
@@ -48,11 +47,4 @@ public class Prompt {
         this.category = category;
     }
 
-    public boolean getPreviouslyDisplayed() {
-        return previouslyDisplayed;
-    }
-
-    public void setPreviouslyDisplayed(boolean previouslyDisplayed) {
-        this.previouslyDisplayed = previouslyDisplayed;
-    }
 }
