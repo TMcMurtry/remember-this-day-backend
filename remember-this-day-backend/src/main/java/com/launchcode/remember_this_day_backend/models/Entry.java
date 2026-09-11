@@ -9,7 +9,7 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    private String entryText;
+    private long entryText;
     private String date;
     private String dateCreated;
     private String previouslyDisplayed;
@@ -21,7 +21,7 @@ public class Entry {
     public Entry() {
     }
 
-    public Entry(User user, String title, String entryText, String date, String dateCreated, String previouslyDisplayed) {
+    public Entry(User user, String title, long entryText, String date, String dateCreated, String previouslyDisplayed) {
         this.user = user;
         this.title = title;
         this.entryText = entryText;
@@ -54,11 +54,11 @@ public class Entry {
         this.title = title;
     }
 
-    public String getEntryText() {
+    public long getEntryText() {
         return entryText;
     }
 
-    public void setEntryText(String entryText) {
+    public void setEntryText(long entryText) {
         this.entryText = entryText;
     }
 
