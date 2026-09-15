@@ -23,6 +23,11 @@ public class EntryController {
         return entryRepository.findById(id).orElse(null);
     }
 
+    @GetMapping("/user/{user}")
+    public List<Entry> getEntriesByUserId(@PathVariable int user) {
+        return entryRepository.findByUserId(user);
+    }
+
     @PostMapping
     public Entry addItem(@RequestBody Entry entry) {
         return entryRepository.save(entry);

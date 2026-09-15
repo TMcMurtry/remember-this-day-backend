@@ -25,6 +25,11 @@ public class PromptController {
         return promptRepository.findById(id).orElse(null);
     }
 
+    @GetMapping("/category/{category}")
+    public List<Prompt> getPromptsByCategoryId(@PathVariable int category) {
+        return promptRepository.findByCategoryId(category);
+    }
+
     @PostMapping
     public Prompt addItem(@RequestBody Prompt prompt) {
         return promptRepository.save(prompt);

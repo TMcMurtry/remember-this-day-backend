@@ -9,7 +9,6 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private boolean previouslyDisplayed;
     private String categoryName;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category", orphanRemoval = true)
@@ -19,9 +18,8 @@ public class Category {
     public Category() {
     }
 
-    public Category(String categoryName, boolean previouslyDisplayed) {
+    public Category(String categoryName) {
         this.categoryName = categoryName;
-        this.previouslyDisplayed = previouslyDisplayed;
     }
 
     public String getCategoryName() {
@@ -30,14 +28,6 @@ public class Category {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
-    }
-
-    public boolean getPreviouslyDisplayed() {
-        return previouslyDisplayed;
-    }
-
-    public void setPreviouslyDisplayed(boolean previouslyDisplayed) {
-        this.previouslyDisplayed = previouslyDisplayed;
     }
 
     public int getId() {
